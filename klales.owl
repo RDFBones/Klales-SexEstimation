@@ -25,11 +25,76 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000999 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000999"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000027 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000027"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000070 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000070"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000338 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000338"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000938 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000938"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000963 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000963"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001909 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001909"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001930 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001930"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0200000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0200000"/>
     
 
 
@@ -155,6 +220,14 @@
     <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyNumericScore">
         <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyNumericScore"/>
         <rdfs:label>Numeric value of Klales&apos;s ischiopubic ramus ridge assigned morphology</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyNumericScoreValueSpecification -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyNumericScoreValueSpecification">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyNumericScoreValueSpecification"/>
     </owl:Class>
     
 
@@ -608,6 +681,14 @@
     
 
 
+    <!-- http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyNumericScoreValueSpecification -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyNumericScoreValueSpecification">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyNumericScoreValueSpecification"/>
+    </owl:Class>
+    
+
+
     <!-- http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyScalarTransform -->
 
     <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyScalarTransform">
@@ -677,6 +758,14 @@
     
 
 
+    <!-- http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyNumericScoreValueSpecification -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyNumericScoreValueSpecification">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyNumericScoreValueSpecification"/>
+    </owl:Class>
+    
+
+
     <!-- http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyScalarTransform -->
 
     <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyScalarTransform">
@@ -697,30 +786,6 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>Klales&apos;s ventral arc assigned morphology value specification</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://w3id.org/rdfbones/ext/phenice/IschiopubicRamusRidgeMorphologyNumericScoreValueSpecification -->
-
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/phenice/IschiopubicRamusRidgeMorphologyNumericScoreValueSpecification">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyNumericScoreValueSpecification"/>
-    </owl:Class>
-    
-
-
-    <!-- http://w3id.org/rdfbones/ext/phenice/SubpubicConcavityMorphologyNumericScoreValueSpecification -->
-
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/phenice/SubpubicConcavityMorphologyNumericScoreValueSpecification">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyNumericScoreValueSpecification"/>
-    </owl:Class>
-    
-
-
-    <!-- http://w3id.org/rdfbones/ext/phenice/VentralArcMorphologyNumericScoreValueSpecification -->
-
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/phenice/VentralArcMorphologyNumericScoreValueSpecification">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyNumericScoreValueSpecification"/>
     </owl:Class>
     
 
@@ -963,11 +1028,11 @@
 
     <!-- http://w3id.org/rdfbones/ext/phaleron-si/9-Unobservable -->
 
-    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/phaleron-si/9-Unobservable">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/phaleron-si/9-Unobservable">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyLabel"/>
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyLabel"/>
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyLabel"/>
-    </rdf:Description>
+    </owl:NamedIndividual>
     
 
 
@@ -1080,17 +1145,17 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyScalarTransform"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyScalarTransform"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyScalarTransform"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyNumericScoreValueSpecification"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyNumericScoreValueSpecification"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyNumericScoreValueSpecification"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/phenice/IschiopubicRamusRidgeMorphologyNumericScoreValueSpecification"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/phenice/SubpubicConcavityMorphologyNumericScoreValueSpecification"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/phenice/VentralArcMorphologyNumericScoreValueSpecification"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyScalarTransform"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyScalarTransform"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyScalarTransform"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
