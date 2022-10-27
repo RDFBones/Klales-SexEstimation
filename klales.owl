@@ -130,26 +130,8 @@
     <!-- http://w3id.org/rdfbones/ext/klales/ConvertedSex -->
 
     <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/ConvertedSex">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000938"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
         <rdfs:label>Klales&apos;s score converted to sex</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://w3id.org/rdfbones/ext/klales/ConvertedSexLabel -->
-
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/ConvertedSexLabel">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000963"/>
-        <rdfs:label>Klales&apos;s score converted to sex category label</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://w3id.org/rdfbones/ext/klales/ConvertedSexValueSpecification -->
-
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/ConvertedSexValueSpecification">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001930"/>
-        <rdfs:label>Klales&apos;s score converted to sex value specification</rdfs:label>
     </owl:Class>
     
 
@@ -457,7 +439,7 @@ Unobservable = no value</rdfs:comment>
     <!-- http://w3id.org/rdfbones/ext/klales/Female -->
 
     <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/Female">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/ConvertedSexLabel"/>
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/ConvertedSex"/>
     </owl:NamedIndividual>
     
 
@@ -510,7 +492,7 @@ Unobservable = no value</rdfs:comment>
     <!-- http://w3id.org/rdfbones/ext/klales/Male -->
 
     <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/Male">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/ConvertedSexLabel"/>
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/ConvertedSex"/>
     </owl:NamedIndividual>
     
 
