@@ -14,15 +14,15 @@
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:resource="http://semanticscience.org/resource/">
-    <owl:Ontology rdf:about="http://w3id.org/rdfbones/ext/klales">
+    <owl:Ontology rdf:about="http://w3id.org/rdfbones/ext/klales-se">
         <terms:creator>Lukas Bender</terms:creator>
         <terms:title>Klales&apos;s Sex Estimation ontology</terms:title>
         <rdfs:label>Klales&apos;s Sex Estimation ontology</rdfs:label>
     </owl:Ontology>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotation properties
@@ -30,7 +30,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
@@ -38,22 +38,22 @@
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
         <rdfs:label>definition</rdfs:label>
     </owl:AnnotationProperty>
-    
+
 
 
     <!-- http://purl.org/dc/terms/creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
-    
+
 
 
     <!-- http://purl.org/dc/terms/title -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -61,16 +61,16 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0000999 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000999"/>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -78,189 +78,257 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/IAO_0000027 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000027"/>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0000070 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000070"/>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0000938 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000938"/>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0000963 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000963"/>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0001930 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001930"/>
-    
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001930">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001933"/>
+    </owl:Class>
+
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001933 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001933"/>
+
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0200000 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0200000"/>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/ClassificationProcess -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/ClassificationProcess">
+    <!-- http://w3id.org/rdfbones/ext/klales-se/ClassificationProcess -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/ClassificationProcess">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
         <obo:IAO_0000115>An assay that assigns a specific pre-defined morphology type to aa anatomical region of interest of the pelvic girdle of a specimen according to the method described in Klales (2012).</obo:IAO_0000115>
         <rdfs:label>Klales&apos;s morphological classification</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/ConvertedSex -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/ConvertedSex">
+    <!-- http://w3id.org/rdfbones/ext/klales-se/ConvertedSex -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/ConvertedSex">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales-se/ConvertedSexValueSpecification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label>Klales&apos;s score converted to sex</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeClassificationProcess -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeClassificationProcess">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/ClassificationProcess"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/ConvertedSexValueSpecification -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/ConvertedSexValueSpecification">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/phaleron-di/NumberValueSpecification"/>
+        <rdfs:label>Klales&apos;s score converted to sex value specification</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeClassificationProcess -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeClassificationProcess">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/ClassificationProcess"/>
         <rdfs:label>Klales&apos;s ischiopubic ramus ridge morphological classification</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphology -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphology">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/Morphology"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphology -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphology">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/Morphology"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyValueSpecification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label>Klales&apos;s ischiopubic ramus ridge assigned morphology</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyLabel -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyLabel">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/MorphologyLabel"/>
         <rdfs:label>Klales&apos;s ischiopubic ramus ridge assigned morphology label</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyNumericScore -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyNumericScore">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyNumericScore"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScore -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScore">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericScore"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScoreValueSpecification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label>Numeric value of Klales&apos;s ischiopubic ramus ridge assigned morphology</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyNumericTransform -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyNumericTransform">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyNumericTransform"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScoreValueSpecification -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScoreValueSpecification">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericScoreValueSpecification"/>
+        <rdfs:label>Numeric value of Klales&apos;s ischiopubic ramus ridge assigned morphology value specification</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransform -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransform">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericTransform"/>
         <rdfs:label>Klales&apos;s ischiopubic ramus ridge assigned morphology numeric transformation</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyValueSpecification -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyValueSpecification">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyValueSpecification"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyValueSpecification -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyValueSpecification">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/MorphologyValueSpecification"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
-                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyLabel"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>Klales&apos;s ischiopubic ramus ridge assigned morphology value specification</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/LogisticRegressionConversion -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/LogisticRegressionConversion">
+    <!-- http://w3id.org/rdfbones/ext/klales-se/LogisticRegressionConversion -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/LogisticRegressionConversion">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200000"/>
         <obo:IAO_0000115>A data transformation that converts the score of Klales&apos;s logistic regression equation into either of the two values &apos;male&apos; or &apos;female&apos;.</obo:IAO_0000115>
         <rdfs:comment>If score &gt; 0, value is male. If score &lt; 0, value is female</rdfs:comment>
         <rdfs:label>Klales&apos;s logistic regression conversion</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/LogisticRegressionEquation -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/LogisticRegressionEquation">
+    <!-- http://w3id.org/rdfbones/ext/klales-se/LogisticRegressionEquation -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/LogisticRegressionEquation">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200000"/>
         <obo:IAO_0000115>A logistic regression equation using the scores assigned to categories of morphologies of three anatomical regions of interest with the formula
 2.726*x + 1.214*y + 1.073*z - 16.312
 where x=score of ventral arc, y=score of ischiopubic ramus ridge, and z=score of subpubic concavity</obo:IAO_0000115>
         <rdfs:label>Klales&apos;s logistic regression equation</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/LogisticRegressionEquationScore -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/LogisticRegressionEquationScore">
+    <!-- http://w3id.org/rdfbones/ext/klales-se/LogisticRegressionEquationScore -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/LogisticRegressionEquationScore">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales-se/LogisticRegressionEquationScoreValueSpecification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>The value generated by Klales&apos;s logistic regression equation.</obo:IAO_0000115>
         <rdfs:label>Klales&apos;s logistic regression equation score</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/Morphology -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/Morphology">
+    <!-- http://w3id.org/rdfbones/ext/klales-se/LogisticRegressionEquationScoreValueSpecification -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/LogisticRegressionEquationScoreValueSpecification">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/phaleron-di/NumberValueSpecification"/>
+        <rdfs:label>Klales&apos;s logistic regression equation score value specification</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales-se/Morphology -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/Morphology">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000938"/>
         <obo:IAO_0000115>A morphology type that has been assigned to an anatomical region of interest of a specimen via Klales&apos;s classification assay.</obo:IAO_0000115>
         <rdfs:label>Klales&apos;s assigned morphology</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/MorphologyLabel -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/MorphologyLabel">
+    <!-- http://w3id.org/rdfbones/ext/klales-se/MorphologyLabel -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/MorphologyLabel">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000963"/>
         <rdfs:label>Klales&apos;s assigned morphology label</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/MorphologyNumericScore -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/MorphologyNumericScore">
+    <!-- http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericScore -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericScore">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
         <obo:IAO_0000115>A numeric value assigned by the numeric transformation process.</obo:IAO_0000115>
         <rdfs:label>Numeric value of Klales&apos;s assigned morphology</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/MorphologyNumericTransform -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/MorphologyNumericTransform">
+    <!-- http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericScoreValueSpecification -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericScoreValueSpecification">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/phaleron-di/NumberValueSpecification"/>
+        <rdfs:label>Numeric value of Klales&apos;s assigned morphology value specification</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericTransform -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericTransform">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200000"/>
         <obo:IAO_0000115>Assigns each morphology type a corresponding numeric value.</obo:IAO_0000115>
         <rdfs:comment>Morphology type 1 = 1
@@ -271,161 +339,226 @@ Morphology type 5 = 5
 Unobservable = no value</rdfs:comment>
         <rdfs:label>Numeric transformation of Klales&apos;s assigned morphology</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/MorphologyValueSpecification -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/MorphologyValueSpecification">
+    <!-- http://w3id.org/rdfbones/ext/klales-se/MorphologyValueSpecification -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/MorphologyValueSpecification">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001930"/>
         <rdfs:label>Klales&apos;s assigned morphology value specification</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/ProbabilityTransformation -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/ProbabilityTransformation">
+    <!-- http://w3id.org/rdfbones/ext/klales-se/ProbabilityTransformation -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/ProbabilityTransformation">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200000"/>
         <obo:IAO_0000115>A data transformation that converts a Klales&apos;s logistic regression equation score into the probability of being male or female.</obo:IAO_0000115>
         <rdfs:comment>Probability of being male = 1/(1+e^x) where x = linear regression equation score. Probability of being female = 1-(1/1+e^x))</rdfs:comment>
         <rdfs:label>Klales&apos;s score to sex probability transformation</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/SexProbability -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/SexProbability">
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SexProbability -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/SexProbability">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SexProbabilityValueSpecification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>The likelihood of a specimen being male or female.</obo:IAO_0000115>
         <rdfs:comment>Probability of being male = 1/(1+e^x) where x = linear regression equation score. Probability of being female = 1-(1/1+e^x))</rdfs:comment>
         <rdfs:label>Klales&apos;s sex probability</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/SubpubicConcavityClassificationProcess -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityClassificationProcess">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/ClassificationProcess"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SexProbabilityValueSpecification -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/SexProbabilityValueSpecification">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/phaleron-di/NumberValueSpecification"/>
+        <rdfs:label>Klales&apos;s sex probability value specification</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityClassificationProcess -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityClassificationProcess">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/ClassificationProcess"/>
         <rdfs:label>Klales&apos;s subpubic concavity morphological classification</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphology -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphology">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/Morphology"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphology -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphology">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/Morphology"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyValueSpecification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label>Klales&apos;s subpubic concavity assigned morphology</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyLabel -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyLabel">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyLabel -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyLabel">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/MorphologyLabel"/>
         <rdfs:label>Klales&apos;s subpubic concavity assigned morphology label</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyNumericScore -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyNumericScore">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyNumericScore"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScore -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScore">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericScore"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScoreValueSpecification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label>Numeric value of Klales&apos;s subpubic concavity assigned morphology</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyNumericTransform -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyNumericTransform">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyNumericTransform"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScoreValueSpecification -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScoreValueSpecification">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericScoreValueSpecification"/>
+        <rdfs:label>Numeric value of Klales&apos;s subpubic concavity assigned morphology value specification</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericTransform -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericTransform">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericTransform"/>
         <rdfs:label>Klales&apos;s subpubic concavity assigned morphology numeric transformation</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyValueSpecification -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyValueSpecification">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyValueSpecification"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyValueSpecification -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyValueSpecification">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/MorphologyValueSpecification"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
-                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyLabel"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyLabel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>Klales&apos;s subpubic concavity assigned morphology value specification</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/VentralArcClassificationProcess -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcClassificationProcess">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/ClassificationProcess"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcClassificationProcess -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcClassificationProcess">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/ClassificationProcess"/>
         <rdfs:label>Klales&apos;s ventral arc morphological classification</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/VentralArcMorphology -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcMorphology">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/Morphology"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphology -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphology">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/Morphology"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyValueSpecification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label>Klales&apos;s ventral arc assigned morphology</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyLabel -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyLabel">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyLabel -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyLabel">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/MorphologyLabel"/>
         <rdfs:label>Klales&apos;s ventral arc assigned morphology label</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyNumericScore -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyNumericScore">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyNumericScore"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScore -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScore">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericScore"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScoreValueSpecification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label>Numeric value of Klales&apos;s ventral arc assigned morphology</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyNumericTransform -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyNumericTransform">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyNumericTransform"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScoreValueSpecification -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScoreValueSpecification">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericScoreValueSpecification"/>
+        <rdfs:label>Numeric value of Klales&apos;s ventral arc assigned morphology value specification</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericTransform -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericTransform">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericTransform"/>
         <rdfs:label>Klales&apos;s ventral arc assigned morphology numeric transformation</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyValueSpecification -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyValueSpecification">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales/MorphologyValueSpecification"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyValueSpecification -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyValueSpecification">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/MorphologyValueSpecification"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
-                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyLabel"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyLabel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>Klales&apos;s ventral arc assigned morphology value specification</rdfs:label>
     </owl:Class>
-    
 
 
-    <!-- 
+
+    <!-- http://w3id.org/rdfbones/ext/phaleron-di/NumberValueSpecification -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/phaleron-di/NumberValueSpecification">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001933"/>
+    </owl:Class>
+
+
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Individuals
@@ -433,171 +566,171 @@ Unobservable = no value</rdfs:comment>
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/Female -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/Female">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/ConvertedSex"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/Female -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/Female">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/ConvertedSex"/>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeType1 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeType1">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType1 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType1">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">Ischiopubic ramus ridge morphology type 1</rdfs:label>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeType2 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeType2">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType2 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType2">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">Ischiopubic ramus ridge morphology type 2</rdfs:label>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeType3 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeType3">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType3 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType3">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">Ischiopubic ramus ridge morphology type 3</rdfs:label>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeType4 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeType4">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType4 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType4">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">Ischiopubic ramus ridge morphology type 4</rdfs:label>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeType5 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeType5">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType5 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType5">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">Ischiopubic ramus ridge morphology type 5</rdfs:label>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/Male -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/Male">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/ConvertedSex"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/Male -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/Male">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/ConvertedSex"/>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/SubpubicConcavityType1 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityType1">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType1 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType1">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">Subpubic concavity morphology type 1</rdfs:label>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/SubpubicConcavityType2 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityType2">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType2 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType2">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">Subpubic concavity morphology type 2</rdfs:label>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/SubpubicConcavityType3 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityType3">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType3 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType3">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">Subpubic concavity morphology type 3</rdfs:label>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/SubpubicConcavityType4 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityType4">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType4 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType4">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">Subpubic concavity morphology type 4</rdfs:label>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/SubpubicConcavityType5 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityType5">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType5 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType5">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">Subpubic concavity morphology type 5</rdfs:label>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/VentralArcType1 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcType1">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcType1 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcType1">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">Ventral arc morphology type 1</rdfs:label>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/VentralArcType2 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcType2">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcType2 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcType2">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">Ventral arc morphology type 2</rdfs:label>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/VentralArcType3 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcType3">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcType3 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcType3">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">Ventral arc morphology type 3</rdfs:label>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/VentralArcType4 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcType4">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcType4 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcType4">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">Ventral arc morphology type 4</rdfs:label>
     </owl:NamedIndividual>
-    
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales/VentralArcType5 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcType5">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyLabel"/>
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcType5 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcType5">
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">Ventral arc morphology type 5</rdfs:label>
     </owl:NamedIndividual>
-    
+
 
 
     <!-- http://w3id.org/rdfbones/ext/phaleron-si/9-Unobservable -->
 
     <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/phaleron-si/9-Unobservable">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyLabel"/>
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyLabel"/>
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyLabel"/>
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel"/>
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyLabel"/>
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyLabel"/>
     </owl:NamedIndividual>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // General axioms
@@ -608,41 +741,49 @@ Unobservable = no value</rdfs:comment>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeClassificationProcess"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityClassificationProcess"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcClassificationProcess"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeClassificationProcess"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityClassificationProcess"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcClassificationProcess"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphology"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphology"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcMorphology"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphology"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphology"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphology"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyLabel"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyLabel"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyLabel"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyLabel"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyLabel"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyNumericScore"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyNumericScore"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyNumericScore"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScore"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScore"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScore"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/IschiopubicRamusRidgeMorphologyNumericTransform"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/SubpubicConcavityMorphologyNumericTransform"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales/VentralArcMorphologyNumericTransform"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScoreValueSpecification"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScoreValueSpecification"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScoreValueSpecification"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransform"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericTransform"/>
+            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericTransform"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
@@ -650,4 +791,3 @@ Unobservable = no value</rdfs:comment>
 
 
 <!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
-
