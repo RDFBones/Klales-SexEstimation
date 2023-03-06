@@ -65,6 +65,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0000293 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000293"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000299 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000299"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0000999 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000999"/>
@@ -74,6 +86,23 @@
     <!-- http://purl.obolibrary.org/obo/OBI_0001938 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0001938"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001937 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0001937"/>
     
 
 
@@ -158,10 +187,25 @@
     
 
 
+    <!-- http://w3id.org/rdfbones/ext/klales-se/ConvertedSexLabel -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/ConvertedSexLabel">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000963"/>
+        <rdfs:label>Klales&apos;s score converted to sex category label</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://w3id.org/rdfbones/ext/klales-se/ConvertedSexValueSpecification -->
 
     <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/ConvertedSexValueSpecification">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/phaleron-di/NumberValueSpecification"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001930"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label>Klales&apos;s score converted to sex value specification</rdfs:label>
     </owl:Class>
     
@@ -233,50 +277,312 @@
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformType1 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyType1NumericTransform -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformType1">
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyType1NumericTransform">
         <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransform"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphology"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                                                        <owl:hasValue rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeScore1"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScore"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScoreValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformType2 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyType2NumericTransform -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformType2">
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyType2NumericTransform">
         <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransform"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphology"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                                                        <owl:hasValue rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeScore2"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScore"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScoreValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformType3 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyType3NumericTransform -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformType3">
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyType3NumericTransform">
         <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransform"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphology"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                                                        <owl:hasValue rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeScore3"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScore"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScoreValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:hasValue>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformType4 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyType4NumericTransform -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformType4">
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyType4NumericTransform">
         <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransform"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphology"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                                                        <owl:hasValue rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeScore4"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScore"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScoreValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</owl:hasValue>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformType5 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyType5NumericTransform -->
 
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformType5">
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyType5NumericTransform">
         <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransform"/>
-    </owl:Class>
-    
-
-
-    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformUnobservable -->
-
-    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformUnobservable">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransform"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphology"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                                                        <owl:hasValue rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeScore5"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScore"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericScoreValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</owl:hasValue>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -386,12 +692,14 @@ where x=score of ventral arc, y=score of ischiopubic ramus ridge, and z=score of
     <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/MorphologyNumericTransform">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0200000"/>
         <obo:IAO_0000115>Assigns each morphology type a corresponding numeric value. The values are as follows:
+
 Morphology type 1 = 1
 Morphology type 2 = 2
 Morphology type 3 = 3
 Morphology type 4 = 4
 Morphology type 5 = 5
-Unobservable = no value</obo:IAO_0000115>
+
+If a classification cannot be performed, no numeric value can be assigned.</obo:IAO_0000115>
         <rdfs:label>Numeric transformation of Klales&apos;s assigned morphology</rdfs:label>
     </owl:Class>
     
@@ -508,6 +816,316 @@ Unobservable = no value</obo:IAO_0000115>
     
 
 
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyType1NumericTransform -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyType1NumericTransform">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericTransform"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphology"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                                                        <owl:hasValue rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityScore1"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScore"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScoreValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyType2NumericTransform -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyType2NumericTransform">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericTransform"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphology"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                                                        <owl:hasValue rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityScore2"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScore"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScoreValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyType3NumericTransform -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyType3NumericTransform">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericTransform"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphology"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                                                        <owl:hasValue rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityScore3"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScore"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScoreValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:hasValue>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyType4NumericTransform -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyType4NumericTransform">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericTransform"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphology"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                                                        <owl:hasValue rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityScore4"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScore"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScoreValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</owl:hasValue>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyType5NumericTransform -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyType5NumericTransform">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericTransform"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphology"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                                                        <owl:hasValue rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityScore5"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScore"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericScoreValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</owl:hasValue>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyValueSpecification -->
 
     <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyValueSpecification">
@@ -589,6 +1207,316 @@ Unobservable = no value</obo:IAO_0000115>
     
 
 
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyType1NumericTransform -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyType1NumericTransform">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericTransform"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphology"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                                                        <owl:hasValue rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcScore1"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScore"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScoreValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyType2NumericTransform -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyType2NumericTransform">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericTransform"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphology"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                                                        <owl:hasValue rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcScore2"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScore"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScoreValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyType3NumericTransform -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyType3NumericTransform">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericTransform"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphology"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                                                        <owl:hasValue rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcScore3"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScore"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScoreValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:hasValue>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyType4NumericTransform -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyType4NumericTransform">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericTransform"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphology"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                                                        <owl:hasValue rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcScore4"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScore"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScoreValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</owl:hasValue>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyType5NumericTransform -->
+
+    <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyType5NumericTransform">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericTransform"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphology"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000999"/>
+                                                        <owl:hasValue rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcScore5"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScore"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericScoreValueSpecification"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001937"/>
+                                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</owl:hasValue>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyValueSpecification -->
 
     <owl:Class rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyValueSpecification">
@@ -626,51 +1554,51 @@ Unobservable = no value</obo:IAO_0000115>
     <!-- http://w3id.org/rdfbones/ext/klales-se/Female -->
 
     <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/Female">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/ConvertedSex"/>
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/ConvertedSexLabel"/>
         <rdfs:label>Female</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType1 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeScore1 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType1">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeScore1">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ischiopubic ramus ridge morphology type 1</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType2 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeScore2 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType2">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeScore2">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ischiopubic ramus ridge morphology type 2</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType3 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeScore3 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType3">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeScore3">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ischiopubic ramus ridge morphology type 3</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType4 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeScore4 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType4">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeScore4">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ischiopubic ramus ridge morphology type 4</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType5 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeScore5 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeType5">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeScore5">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ischiopubic ramus ridge morphology type 5</rdfs:label>
     </owl:NamedIndividual>
@@ -680,96 +1608,96 @@ Unobservable = no value</obo:IAO_0000115>
     <!-- http://w3id.org/rdfbones/ext/klales-se/Male -->
 
     <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/Male">
-        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/ConvertedSex"/>
+        <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/ConvertedSexLabel"/>
         <rdfs:label>Male</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType1 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityScore1 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType1">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityScore1">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subpubic concavity morphology type 1</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType2 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityScore2 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType2">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityScore2">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subpubic concavity morphology type 2</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType3 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityScore3 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType3">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityScore3">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subpubic concavity morphology type 3</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType4 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityScore4 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType4">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityScore4">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subpubic concavity morphology type 4</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType5 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityScore5 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityType5">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityScore5">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subpubic concavity morphology type 5</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcType1 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcScore1 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcType1">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcScore1">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ventral arc morphology type 1</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcType2 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcScore2 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcType2">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcScore2">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ventral arc morphology type 2</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcType3 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcScore3 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcType3">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcScore3">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ventral arc morphology type 3</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcType4 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcScore4 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcType4">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcScore4">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ventral arc morphology type 4</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcType5 -->
+    <!-- http://w3id.org/rdfbones/ext/klales-se/VentralArcScore5 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcType5">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcScore5">
         <rdf:type rdf:resource="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyLabel"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ventral arc morphology type 5</rdfs:label>
     </owl:NamedIndividual>
@@ -840,17 +1768,6 @@ Unobservable = no value</obo:IAO_0000115>
             <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransform"/>
             <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/SubpubicConcavityMorphologyNumericTransform"/>
             <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/VentralArcMorphologyNumericTransform"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformType1"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformType2"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformType3"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformType4"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformType5"/>
-            <rdf:Description rdf:about="http://w3id.org/rdfbones/ext/klales-se/IschiopubicRamusRidgeMorphologyNumericTransformUnobservable"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
